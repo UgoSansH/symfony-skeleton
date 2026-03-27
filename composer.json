@@ -1,20 +1,27 @@
 {
+    "name": "UgoSansH/symfony-skeleton",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
+    "repository": "https://github.com/UgoSansH/symfony-skeleton.git",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.4",
+        "php": ">=8.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "symfony/console": "8.0.*",
         "symfony/dotenv": "8.0.*",
-        "symfony/flex": "^2",
+        "symfony/flex": "^2.10",
         "symfony/framework-bundle": "8.0.*",
         "symfony/runtime": "8.0.*",
+        "symfony/uid": "8.0.*",
         "symfony/yaml": "8.0.*"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^13.0",
+        "symfony/var-dumper": "8.0.*"
     },
     "config": {
         "allow-plugins": {
@@ -63,8 +70,11 @@
         "symfony/symfony": "*"
     },
     "extra": {
+        "platform": {
+            "php": "8.5"
+        },
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": true,
             "require": "8.0.*"
         }
     }

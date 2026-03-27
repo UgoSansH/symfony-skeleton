@@ -1,0 +1,19 @@
+services:
+    frankenphp:
+        build: ./docker/frankenphp
+        restart: unless-stopped
+        user: "${UID:-1000}:${GID:-1000}"
+        ports:
+            - "80:80"
+            - "443:443"
+        environment:
+            - TRUSTED_PROXIES=172.0.0.0/8
+            - TRUSTED_HOSTS=app.localhost
+        volumes:
+            - ./:/app
+            - ./docker/caddy_data:/data/caddy
+            - ./docker/frankenphp/Caddyfile:/etc/caddy/Caddyfile
+            - ./docker/frankenphp/php.ini:/usr/local/etc/php/conf.d/config.ini
+
+volumes:
+    caddy_data:
